@@ -1,0 +1,38 @@
+.search-results-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding-right: 1em;
+}
+
+.search-results {
+    width: 100%;
+}
+
+.no-results {
+    font-size: 24px;
+}
+
+.result {
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 4px;
+    text-decoration: none;
+    background: #eee;
+    color: #000;
+}
+
+.result:hover {
+    background: #ddd;
+}
+
+.loading, .error {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}

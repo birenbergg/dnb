@@ -1,0 +1,36 @@
+.pagination-container {
+    display: flex;
+    margin: 0 0 2em;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pagination-container li {
+    margin: 1em;
+    border-radius: 5px;
+    background: #3a9bdc;
+    color: white;
+}
+
+.pagination-container li a {
+    display: block;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.pagination-container li:hover {
+    background: #0583d2;
+}
+
+.pagination-container li.pagination-disabled {
+    background: #ccc;
+}
+
+.pagination-container li.pagination-active {
+    background: #ffa500;
+}
+
+.pagination-container li.pagination-disabled a,
+.pagination-container li.pagination-active a {
+    cursor: default;
+}

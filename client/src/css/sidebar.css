@@ -1,0 +1,48 @@
+aside {
+    height: 100%;
+}
+
+.find-in-results {
+    margin-bottom: 2em;
+}
+
+.find-in-results input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    border-radius: 4px;
+}
+
+.found {
+    font-size: 14px;
+    color: #666;
+}
+
+aside.previous-search-queries-container {
+    width: 300px;
+    padding-left: 1em;
+    border-left: 1px solid #eee;
+}
+
+aside.previous-search-queries-container h2 {
+    margin-top: 0;
+}
+
+.previous-search-queries {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.previous-search-query {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    background: #f9e09f;
+    color: #000;
+}
+
+.previous-search-query:hover {
+    background: #f6d56d;
+}
