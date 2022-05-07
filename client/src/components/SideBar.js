@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSearchQuery, getSearchResults, getPreviousQueries } from '../features/searchSlice'
-import HighlightInput from '../components/highlight/HighlightInput'
 
 const Sidebar = () => {
     const dispatch = useDispatch()
@@ -15,12 +14,10 @@ const Sidebar = () => {
         dispatch(getSearchResults())
     }
 
-    const searchResults = useSelector(state => state.search.searchResults)
     const searchQueryHistory = useSelector(state => state.search.searchQueryHistory)
 
     return (
         <aside className="previous-search-queries-container">
-            {(searchResults && searchResults.length > 0) && <HighlightInput />}
             {(searchQueryHistory && searchQueryHistory.length > 0) &&
                 <div>
                     <h2>Previous Searches</h2>

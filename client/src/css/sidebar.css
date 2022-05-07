@@ -2,22 +2,6 @@ aside {
     height: 100%;
 }
 
-.find-in-results {
-    margin-bottom: 2em;
-}
-
-.find-in-results input {
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 1em;
-    border-radius: 4px;
-}
-
-.found {
-    font-size: 14px;
-    color: #666;
-}
-
 aside.previous-search-queries-container {
     width: 300px;
     padding-left: 1em;

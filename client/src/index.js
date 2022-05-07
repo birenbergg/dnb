@@ -10,7 +10,7 @@ import './css/index.css'
 import './css/searchBar.css'
 import './css/results.css'
 import './css/pagination.css'
-import './css/sidebar.css'
+import './css/sideBar.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

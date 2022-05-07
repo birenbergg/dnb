@@ -1,5 +1,6 @@
 .search-bar {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 2em;
@@ -7,7 +8,7 @@
     border-bottom: 1px solid #eee;
 }
 
-.search-bar form {
+.search-bar .search {
     display: flex;
     align-items: center;
 }
@@ -39,4 +40,21 @@
     background: #ccc;
     border-color: #ccc;
     cursor: default;
+}
+
+.find-in-results {
+    margin-bottom: 2em;
+}
+
+.find-in-results input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    border-radius: 4px;
+}
+
+.found {
+    margin: 1em 0;
+    font-size: 14px;
+    color: #666;
 }
