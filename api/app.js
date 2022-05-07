@@ -85,38 +85,4 @@ app.post('/save-to-query-history', async (req, res) => {
     }
 })
 
-
-// TODO?.. POST request
-
-app.post('/', async (req, res) => {
-    const param = req.query.q
-
-    try {
-        const apiResults = await axios.get(`http://api.duckduckgo.com/?q=${param}&format=json`)
-        const modifiedResults = []
-
-        apiResults.data.RelatedTopics.forEach(r => {
-            if (r.hasOwnProperty('Topics')) {
-                r.Topics.forEach(t => {
-                    modifiedResults.push({
-                        url: t.FirstURL,
-                        title: t.Text
-                    })
-                })
-            } else {
-                modifiedResults.push({
-                    url: r.FirstURL,
-                    title: r.Text
-                })
-            }
-
-        })
-
-        res.send(modifiedResults)
-    } catch (error) {
-        res.send(error)
-    }
-
-})
-
 app.listen(port, () => console.log(`Server running on port ${port}`))
