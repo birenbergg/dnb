@@ -1,4 +1,3 @@
-import env from 'react-dotenv'
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 const initialState = {
@@ -9,7 +8,7 @@ const initialState = {
     error: null
 }
 
-const apiUrl = env.API_URL
+const apiUrl = 'https://dnb-api.birenbergg.com'
 
 export const getSearchResults = createAsyncThunk(
     'searchResults/getSearchResults',
