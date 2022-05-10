@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: dnb-api-c
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./api:/app
+      - ./api/node_modules
+  client:
+    build: ./client
+    container_name: dnb-client-c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/app
+      - ./client/node_modules
+    stdin_open: true
+    tty: true

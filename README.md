@@ -14,6 +14,6 @@ To run the app(s) locally:
 The app should be ready to use at this point.
 Open http://localhost:3000 in the browser to use it.
 
-There's also an up and runnig app at https://dnb.birenbergg.com
+* You can also run these app parts via Docker by running "docker-compose up" in current folder (where this README file is, outside "api" and "client" folders)
 
-You can also run these app parts via docker by running "docker build" in each folder separately ("api" and "client") and creating containers from both of the images that you would create.
+There's also an up and runnig app at https://dnb.birenbergg.com
