@@ -8,7 +8,8 @@ const initialState = {
     error: null
 }
 
-const apiUrl = 'https://dnb-api.birenbergg.com'
+// const apiUrl = 'https://dnb-api.birenbergg.com'
+const apiUrl = 'http://localhost:5000'
 
 export const getSearchResults = createAsyncThunk(
     'searchResults/getSearchResults',
@@ -48,7 +49,7 @@ export const getPreviousQueries = createAsyncThunk(
 
 export const setPreviousQueries = createAsyncThunk(
     'previousQueries/setPreviousQueries',
-    async (query, { rejectWithValue }) => {
+    async (query, { dispatch, rejectWithValue }) => {
         const res = await fetch(`${apiUrl}/save-to-query-history`, {
             method: 'POST',
             headers: {
@@ -58,10 +59,14 @@ export const setPreviousQueries = createAsyncThunk(
             body: JSON.stringify({ query })
         })
 
+        const data = await res.json()
+
         if (res.status === 500) {
             const data = await res.json()
             return rejectWithValue(data.message)
         }
+
+        dispatch(setSearchQueryHistory(data))
     }
 )
 

@@ -49,7 +49,6 @@ app.get('/', async (req, res) => {
 app.get('/get-query-history', async (req, res) => {
     try {
         if (!fs.existsSync('previousQueries.json')) {
-            fs.writeFileSync('previousQueries.json', JSON.stringify([]))
             res.send([])
         } else {
             const rawdata = fs.readFileSync('previousQueries.json')
@@ -65,7 +64,7 @@ app.post('/save-to-query-history', async (req, res) => {
     const query = req.body.query
     try {
         if (!fs.existsSync('previousQueries.json')) {
-            fs.writeFileSync('previousQueries.json', JSON.stringify([...query]))
+            fs.writeFileSync('previousQueries.json', JSON.stringify([query]))
         } else {
             const rawdata = fs.readFileSync('previousQueries.json')
             let previousQueries = JSON.parse(rawdata)
@@ -79,7 +78,10 @@ app.post('/save-to-query-history', async (req, res) => {
             previousQueries.push(query)
             fs.writeFileSync('previousQueries.json', JSON.stringify(previousQueries))
         }
-        res.end()
+
+        const rawdata = fs.readFileSync('previousQueries.json')
+        const previousQueries = JSON.parse(rawdata)
+        res.send(previousQueries)
     } catch (error) {
         res.status(500).send({ message: 'Error saving to query history.' })
     }
